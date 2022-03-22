@@ -127,3 +127,8 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# model files are likely to exceed GitHub's size limits
+notebooks/models/wandb
+# leave out logs too
+notebooks/models/lightning_logs
