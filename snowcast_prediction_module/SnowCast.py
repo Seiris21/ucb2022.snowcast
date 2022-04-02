@@ -160,7 +160,7 @@ for i in range(len(df)):
         predictions.append(output)
         x+=1
         
-        print(f'{round(x/len(df),3)*100}% -- {x} out of {len(df)} km complete')
+        print(f'{round(x/len(df)*100,3)}% -- {x} out of {len(df)} km complete')
         print(f"Current time per km: {round(time.time()-start, 3)} seconds")
 
 df.SWE = predictions
