@@ -132,3 +132,6 @@ dmypy.json
 notebooks/models/wandb
 # leave out logs too
 notebooks/models/lightning_logs
+
+#Leaving out model weights because they are too big
+*.ckpt
