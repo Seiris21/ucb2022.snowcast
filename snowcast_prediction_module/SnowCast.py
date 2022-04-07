@@ -22,10 +22,12 @@ print('''
 
 import os
 
+#First we set the working directory to the folder that this script is contained in
 abspath = os.path.abspath(__file__)
 dname = os.path.dirname(abspath)
 os.chdir(dname)
 
+#Now we try the imports. If it doesn't work we pip install them and try again
 try:
     print("Attempting Package Import")
     from snowcast import data_wrangling
@@ -33,6 +35,7 @@ try:
     import time
     import numpy as np
     import pandas as pd
+    import datetime as dt
     from datetime import datetime
     from PIL import Image
     print("Import Successful")
@@ -49,18 +52,21 @@ except ImportError:
     import time
     import numpy as np
     import pandas as pd
+    import datetime as dt
     from datetime import datetime
     from PIL import Image
     print("Import Successful")
 
-
+#Attempt to connect to Google earth engine and request a sign in if it hasn't
+#been done yet
 try:
     print("Connecting to Google Earth Engine...")
     ee.Initialize()
 except:
     ee.Authenticate()
     ee.Initialize()
-    
+ 
+#Now we ask the user if they want to test the data import functions
 test = input("Do you want to test data importing? [y/n]: ")
 if test.lower() == 'y':
     data_wrangling.testing()
@@ -68,6 +74,10 @@ if test.lower() == 'y':
 
 
 ######## User Input ##########
+
+#This selection allows the user to select the basin. We simply allow the user
+#To imput a number, then use that number to index a list of our reference .tif
+#files
 
 basin_ref = ["FeatherRef.tif", "YubaRef.tif", "TruckeeRef.tif", "CarsonRef.tif",
              "TuolumneRef.tif", "MercedRef.tif", "SanJoaquinRef.tif", "KingsRef.tif",
@@ -100,7 +110,8 @@ while  not valid_input_received:
 basin = basin_ref[int(basin)-1]
 
 
-
+#Here we get the user to input a date they would like to predict
+#The date must be on or before today
 valid_input_received = False
 while  not valid_input_received:
     date = input('''What date would you like to generate a prediction for?
@@ -108,11 +119,15 @@ Please enter a date in the dd-mm-yyyy format: ''')
     
     try:
         date = datetime.strptime(date, "%d-%m-%Y")
-        valid_input_received = True
     except Exception as e:
         print("Please enter the date in dd-mm-yyyy format, such as 01-01-2020")
         time.sleep(2)
 
+    if date.date() <= dt.date.today():
+        valid_input_received = True
+    else:
+        print("Please enter a date on or before today")
+        time.sleep(2)
 
 
 ###########DataFrame Generation###############
@@ -121,8 +136,11 @@ print("You MIGHT want to go get some coffee...")
 
 tif_path = "ReferenceImages/" + basin
 
+# Now we use our function to chop the reference .tif up into the 1kmx1km
+# prediction grid. We get back a dataframe of a cell number geometries, 
+#an empty SWE column
 
-# I expect to see RuntimeWarnings in this block
+# I expect to see RuntimeWarnings in this block so I catch them and ignore them
 print("Generating Basin Reference...")
 import warnings
 with warnings.catch_warnings():
@@ -133,6 +151,9 @@ print("References Generated")
 
 ##########Define Model Here####################
 print("Attempting additional imports...")
+
+#Now we try to import what we need for the model. If the packages don't exist
+#We install them with pip and try again
 
 try: 
     import torch
@@ -146,6 +167,7 @@ try:
     
     import timm
     
+    import psutil
     
     from pytorch_lightning.utilities.seed import seed_everything
     from pytorch_lightning.core.lightning import LightningModule
@@ -154,6 +176,7 @@ try:
     import matplotlib as mpl
     import matplotlib.pyplot as plt
     import seaborn as sns
+    import gdown
     
     
 except ImportError:
@@ -164,7 +187,7 @@ except ImportError:
     # implement pip as a subprocess:
     subprocess.check_call([sys.executable, '-m', 'pip', 'install', 
                            'torch', 'torchvision', 'torchmetrics', 'timm', 'pytorch-lightning',
-                           'scipy', 'matplotlib', 'seaborn'])
+                           'scipy', 'matplotlib', 'seaborn', 'gdown'])
     import torch
     from torch import nn
     from torch.optim import AdamW
@@ -176,6 +199,7 @@ except ImportError:
     
     import timm
     
+    import psutil
     
     from pytorch_lightning.utilities.seed import seed_everything
     from pytorch_lightning.core.lightning import LightningModule
@@ -184,16 +208,17 @@ except ImportError:
     import matplotlib as mpl
     import matplotlib.pyplot as plt
     import seaborn as sns
+    import gdown
 
 print("Imports Successful")
 
 class args:
 
-    #Keep track of features used in wandb
+    #Keep track of features used in the LSTM
     lstm_features = ['precip_daily','wind_dir_avg','temp_min','temp_max','wind_vel']
 
     #Setting the number of CPU workers we are using
-    num_workers = 12
+    num_workers = psutil.cpu_count()
 
     #Setting the seed so we can replicate
     seed = 1212
@@ -205,7 +230,7 @@ class args:
     model_name1 = 'mixnet_s'
     model_shape1 = 1536
     model_name2 = 'tf_efficientnet_b2_ns'
-    model_shape2 = 1408 #768 for swin small 1536 for swin large 1792 for efficientnet b4 768 for cait-m-36
+    model_shape2 = 1408 
     imagesize = 224
     num_classes = 1
     img_channels = 3
@@ -242,22 +267,34 @@ class args:
 
 #Dataloader Args
 loaderargs = {'num_workers' : args.num_workers, 'pin_memory': False, 'drop_last': False}
-device = torch.device("cuda:0")
+
+#Use the GPU if one is available, otherwise CPU
+device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
 seed_everything(args.seed)
 
+#We need to load the min/max scaler we used in the training of the model
 from pickle import load
 
 target_scaler = load(open('scaler.pkl', 'rb'))
+
+
+#Because running model(x) only performs the model.forward() step, we need to
+#do the resizing and normalization of the image that would have been performed
+#in other steps
+
+#First we create a resize transform
 transform = T.Resize(size = (224,224))
 
+#Now we add together everything we need sequentially
 def image_transform(image):
     image = np.swapaxes(image, 0, 2)
     image = torch.from_numpy(image)
     image = torch.div(image, 255)
-    image = transform(image)
+    image = transform(image) #This is the resize from above
     return image
 
+#Then we define the Dtype and normalization transforms
 def get_default_transforms():
     transform = {
         "train": T.Compose(
@@ -265,7 +302,7 @@ def get_default_transforms():
                 T.ColorJitter(brightness=0.3, contrast=0.3, saturation=0.3),
                 T.ConvertImageDtype(torch.float),
                 T.Normalize(mean = (0.485, 0.456, 0.406), 
-                            std = (0.229, 0.224, 0.225))
+                            std = (0.229, 0.224, 0.225)) #imagenet values
                 
             ]
         ),
@@ -273,7 +310,7 @@ def get_default_transforms():
             [
                 T.ConvertImageDtype(torch.float),
                 T.Normalize(mean = (0.485, 0.456, 0.406), 
-                            std = (0.229, 0.224, 0.225))
+                            std = (0.229, 0.224, 0.225)) #imagenet values
             ]
         ),
     }
@@ -467,31 +504,47 @@ class CNNLSTM(LightningModule):
             }
 
 print("Creating Model...")
-model = CNNLSTM().load_from_checkpoint("best_weights.ckpt").to(device)
+#Here we can load the stored weights
+
+if not os.path.exists("snowcast_best_weights.ckpt"):
+    #download them from a public google drive file if necessary
+    print("Downloading model weights...")
+    id = "1-Zk60aN6ImQ4XResdTvKeriP_DlTGofu"
+    gdown.download(id=id,quiet=False)
+
+model = CNNLSTM().load_from_checkpoint("snowcast_best_weights.ckpt").to(device)
 print("Model Created")
 ##########Prediction module####################
 
+#Create our empty predictions list
 predictions = []
-
+#Initialize a counter so we can print progress
 x = 0
-
+#Start a total timer outside of the loop
 totalstart = time.time()
-
+#Create our Dtype and Normalization transformer
 transforms = get_default_transforms()
 
 print("Predicting")
 
 for i in range(len(df)):
+    #if the SWE column is a nan, it's because this entire km fell outside the basin
+    #so we skip it
     if np.isnan(df.SWE[i]):
         predictions.append(np.nan)
         x+= 1
+    #Otherwise
     else:
+        #Start a local timer for this km
         start = time.time()
+        
+        #Pull in both of the MODIS satellites as tabular data and concatenate
         MOD10A1 = data_wrangling.pull_MODIS_list(df.geometry[i], date, 'MOD10A1')
         MYD10A1 = data_wrangling.pull_MODIS_list(df.geometry[i], date, 'MYD10A1')
         modis = MOD10A1[2::] + MYD10A1[2::]
         modis = torch.FloatTensor(modis).unsqueeze(0).to(device)
         
+        #each of these blocks pulls in one image, then transforms it
         copernicus = data_wrangling.get_copernicus(df.geometry[i])
         copernicus = image_transform(copernicus)
         copernicus = transforms["val"](copernicus).unsqueeze(0).to(device)
@@ -510,23 +563,27 @@ for i in range(len(df)):
         sen2b = image_transform(sen2b)
         sen2b = transforms["val"](sen2b).unsqueeze(0).to(device)  
         
-        
+        #Bring in the weather dataframe, transform the date column, and fill in nas
         weather = data_wrangling.pull_GRIDMET(df.geometry[i], date, num_days_back = 10)
         weather['date'] = pd.to_datetime(weather['date'])
         sequence = weather.fillna(-1)
         
+        #Create a date range
         daterange = pd.date_range(end = date, periods = 10).tolist()
 
+        #If for some reason the full range isn't covered, we add a row
         if list(sequence.shape) != [10,7]:
             missing_dates = [[-1,i,-1,-1,-1,-1,-1] for i in daterange if i not in list(sequence.date)]
             missing_dates = pd.DataFrame(data = missing_dates,columns=['geometry','date','precip','wind_dir','temp_min','temp_max','wind_vel'])
             sequence = pd.concat([sequence,missing_dates],axis=0,ignore_index=True).sort_values('date')
-        #Drop non-tabular data columns
+        #Drop unneeded data columns
         sequence.drop(['geometry','date'],axis=1,inplace=True)
             
-
+        #send the time series to a tensor
         ts = torch.tensor(sequence.values.tolist(),dtype=torch.float32).unsqueeze(0).to(device)
         
+        #Here we pass the data into the model to get a single prediction, then
+        #scale it back up and add it to our predictions
         with torch.no_grad():
             output = model(copernicus, sen1, sen2a, sen2b, modis, ts).squeeze(1)
         
@@ -539,16 +596,25 @@ for i in range(len(df)):
         predictions.extend(pred[0])
         x+=1
         
+        #Print some update output for each km
         print(f'{round(x/len(df)*100,3)}% -- {x} out of {len(df)} km complete')
         print(f"Current time per km: {round(time.time()-start, 3)} seconds")
 
+#Now we replace the empty SWE column in the df with our predictions
 df.SWE = predictions
 
 print(f"Prediction complete! Total time was {round(time.time()-totalstart, 3)} seconds")
 print("Stitching image....")
 
+#Stitch it back together into an image! This outputs a .png heatmap and a .csv 
+#of the data
 im_array = data_wrangling.stitch_aso(tif_path, df, date = str(date))
 
+#We need to close the plot created in the above function
+plt.clf()
+plt.close()
+
+#We define a blurring/smoothing function
 def filter_nan_gaussian_conserving(arr, sigma):
     """Apply a gaussian filter to an array with nans.
 
@@ -576,12 +642,11 @@ def filter_nan_gaussian_conserving(arr, sigma):
     return gauss
 
 
-
+#Give it a conservative amount of smoothing
 sigma = 200
-plt.clf()
-plt.close()
 blurred =filter_nan_gaussian_conserving(im_array, sigma)
 
+#And save this smoothed/blurred data
 ax = sns.heatmap(blurred, vmin = 0, vmax = 100, cmap = "mako_r", yticklabels=False, xticklabels=False)
 plt.savefig(f"{tif_path[0:-7]}{date}_smoothed_prediction.png")
 np.savetxt(f"{tif_path[0:-7]}_{date}_smoothed_prediction.csv", blurred, delimiter=",")
