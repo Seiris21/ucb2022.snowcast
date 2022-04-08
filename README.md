@@ -34,7 +34,7 @@ The models folder contains all the notebooks for models that were trained during
 
 ### Notebooks
 
-This folder contains all the Jupyter Notebooks that were used in the devolpement of this project. One particular folder is of note.
+This folder contains all the Jupyter notebooks that were used in the devolpement of this project. One particular folder is of note.
 
 #### notebooks/data_ingestion
 
@@ -46,7 +46,7 @@ This folder contains the [Final Paper](https://docs.google.com/document/d/1b_gI8
 
 ### SnowCast Prediction Module
 
-This folder contains the [Final Product](https://github.com/Seiris21/2022_snowpack_capstone/tree/main/snowcast_prediction_module) of this project, a python script which generates predictions of Snow Water Equivalent for the user. This folder contains it's own README.md, please refer to this document for a discription of the SnowCast tool.
+This folder contains the [Final Product](https://github.com/Seiris21/2022_snowpack_capstone/tree/main/snowcast_prediction_module) of this project, a python script which generates predictions of Snow Water Equivalent for the user. This folder contains its own README.md, please refer to this document for a description of the SnowCast tool.
 
 # Wrap-Up
 
@@ -63,60 +63,3 @@ kaylaw@berkeley.edu
 
 Tilman Bayer
 tbay@berkeley.edu
-
-
-# References
-
-REFERENCES: 
-
-Aschauer, J., & Marty, C. (2021). Evaluating methods for reconstructing large gaps in historic snow depth time series. Geoscientific Instrumentation, Methods and Data Systems, 10(2), 297-312.
-
-Behrangi, Ali, et al. “Using the Airborne Snow Observatory to Assess Remotely Sensed Snowfall Products in the California Sierra Nevada.” Water Resources Research, vol. 54, no. 10, Oct. 2018, pp. 7331–46. https://doi.org/10.1029/2018WR023108  .
-
-Berg, N., & Hall, A. (2017). Anthropogenic warming impacts on California snowpack during drought. Geophysical Research Letters, 44(5), 2511-2518.
-
-CDFA (California Department of Food and Agriculture). California Agricultural Statistics Review 2015–2016. Available online: https://www.cdfa.ca.gov/statistics/PDFs/2016Report.pdf (accessed on 29 March 2022).
-
-CFF, Center for Farmworker Families. https://farmworkerfamily.org/, (accessed on 2 April 2022).
-
-Cayan, D. R., Maurer, E. P., Dettinger, M. D., Tyree, M., & Hayhoe, K. (2008). Climate change scenarios for the California region. Climatic change, 87(1), 21-42.
-
-Chang, H., & Bonnette, M. R. (2016). Climate change and water‐related ecosystem services: impacts of drought in California, USA. Ecosystem Health and Sustainability, 2(12), e01254.
-
-Dettinger, M. D., & Anderson, M. L. (2015). Storage in California's reservoirs and snowpack in this time of drought. San Francisco Estuary and Watershed Science, 13(2).
-
-Dettinger, M.D., Redmond, K., & Cayan, D. (2004). Winter orographic precipitation ratios in the Sierra Nevada—Large-scale atmospheric circulations and hydrologic consequences. Journal of Hydrometeorology, 5(6), 1102-1116.
-
-Duan, S., & Ullrich, P. (2021). A comprehensive investigation of machine learning models for estimating daily snow water equivalent over the Western US.
-
-Harte, J., Saleska, S. R., & Levy, C. (2015). Convergent ecosystem responses to 23‐year ambient and manipulated warming link advancing snowmelt and shrub encroachment to transient and long‐term climate–soil carbon feedback. Global Change Biology, 21(6), 2349-2356.
-
-Huning, L. S., & Margulis, S. A. (2018). Investigating the variability of high-elevation seasonal orographic snowfall enhancement and its drivers across Sierra Nevada, California. Journal of Hydrometeorology, 19(1), 47-67.
-
-Huning, L. S., & Margulis, S. A. (2017). Climatology of seasonal snowfall accumulation across the Sierra Nevada (USA): Accumulation rates, distributions, and variability. Water Resources Research, 53(7), 6033-6049.
-
-Huning, L. S., Margulis, S. A., Guan, B., Waliser, D. E., & Neiman, P. J. (2017). Implications of detection methods on characterizing atmospheric river contribution to seasonal snowfall across Sierra Nevada, USA. Geophysical Research Letters, 44(20), 10-445.
-
-Kirchner, P. B., Bales, R. C., Molotch, N. P., Flanagan, J., & Guo, Q. (2014). LiDAR measurement of seasonal snow accumulation along an elevation gradient in the southern Sierra Nevada, California. Hydrology and Earth System Sciences, 18(10), 4261-4275.
-
-Lehning, M. (2013). Snow-atmosphere interactions and hydrological consequences. Advances in Water Resources, 55, 1-3.
-
-Lundquist, J. D., Minder, J. R., Neiman, P. J., & Sukovich, E. (2010). Relationships between barrier jet heights, orographic precipitation gradients, and streamflow in the northern Sierra Nevada. Journal of Hydrometeorology, 11(5), 1141-1156.
-
-Margulis, S. A., Cortés, G., Girotto, M., & Durand, M. (2016). A Landsat-era Sierra Nevada snow reanalysis (1985–2015). Journal of Hydrometeorology, 17(4), 1203-1221.
-
-Margulis, S. A., Girotto, M., Cortés, G., & Durand, M. (2015). A particle batch smoother approach to snow water equivalent estimation. Journal of Hydrometeorology, 16(4), 1752-1772.
-
-Meyal, A. Y., Versteeg, R., Alper, E., Johnson, D., Rodzianko, A., Franklin, M., & Wainwright, H. (2020). Automated Cloud Based Long Short-Term Memory Neural Network Based SWE Prediction. Frontiers in Water, 53.
-
-Pile, L. S., Meyer, M. D., Rojas, R., Roe, O., & Smith, M. T. (2019). Drought impacts and compounding mortality on forest trees in the southern Sierra Nevada. Forests, 10(3), 237.
-
-Prugh, L. R., Deguines, N., Grinath, J. B., Suding, K. N., Bean, W. T., Stafford, R., & Brashares, J. S. (2018). Ecological winners and losers of extreme drought in California. Nature Climate Change, 8(9), 819-824.
-
-Rheinheimer, D. E., Ligare, S. T., & Viers, J. H. (2012). Water and Energy Sector Vulnerability to Climate Warming in the Sierra Nevada: Simulating the Regulated Rivers of California’s West Slope Sierra Nevada.
-
-Sloat, L. L., Henderson, A. N., Lamanna, C., & Enquist, B. J. (2015). The effect of the foresummer drought on carbon exchange in subalpine meadows. Ecosystems, 18(3), 533-545.
-
-Storey, E. A., Stow, D. A., Roberts, D. A., O’Leary, J. F., & Davis, F. W. (2021). Evaluating drought impact on postfire recovery of chaparral across southern California. Ecosystems, 24(4), 806-824.
-
-Wainwright, H. M., Steefel, C., Trutner, S. D., Henderson, A. N., Nikolopoulos, E. I., Wilmer, C. F., ... & Enquist, B. J. (2020). Satellite-derived foresummer drought sensitivity of plant productivity in Rocky Mountain headwater catchments: spatial heterogeneity and geological-geomorphological control. Environmental Research Letters, 15(8), 084018.
