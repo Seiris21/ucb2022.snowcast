@@ -5,12 +5,9 @@
 
 
 # Project Background
+**Predicting Snowpack in California’s Sierra Nevada Mountains**
 
-Accurately estimating the amount of snowfall in the Sierra Nevadas is critically important for the people of California and those who benefit from California agriculture. Over 60% of developed water sources and 75% of agricultural water supply across California are derived from precipitation and snow in the Sierra Nevada (Huning & Margulis 2017). California agriculture accounts for over 35% of the United States vegetables, and over 65% of its fruits and nuts (Pathak et al. 2018), contributing to an agricultural industry valued at over $50.5 billion (CDFA), and employing between 600,000- 800,000 farmworkers in the state (CFF). The Sierra Nevada snowpack also provides more than 15% of the electrical power supply for all of California (Rheinheimer et al. 2012). The implications of water availability in the California Central Valley range widely from food availability throughout the US, to  industry, economy, and the livelihood of Californians.
-
-Here we take a machine learning approach to improving the estimates of snow fall across the Sierra Nevadas by attempting to estimate the Snow Water Equivalent (SWE) for the entire region using satellite and weather data that is readily available on a daily basis. We first give an overview of previous research that has been done regarding predictions of snow measures in the Sierra Nevadas, including previous modeling and other machine learning attempts. We then give an overview of the deep learning models used in our estimations, Convolutional Neural Networks (CNN) and Long short-term memory (LSTM) frameworks,  and the history of their use in other fields. We’ll then introduce the data, methods, and results of our CNN/LSTM modeling efforts for the SWE in the Sierra Nevadas. Lastly, we’ll discuss future improvements and work that can be made to continue working towards an accurate and effective SWE estimation that can assist with the current snowpack and water variability crisis in California.
-
-Our study area centers around nine basins in the Sierra Nevada mountains of California: Feather, Yuba, Truckee, Carson, Tuolumne, Merced, San Joaquin, Kings Canyon, and Kaweah. Selection of these basins was driven by the data available through the National Snow and Ice Data Center (NSIDC) Airborne Snow Observatory (ASO) dataset.
+California's Central Valley agriculture region accounts for over 35% of all US vegetable production, and over 65% of all US fruit and nut production, in addition to employing over 600k workers, while remaining dependent on snowmelt water from the Sierra Nevada mountains in a time of decreasing water supply. We’ve leveraged CNN and LSTM modeling to create a tool that uses satellite and weather data to estimate peak snow water equivalent (SWE) levels - i.e. amount of water after snow melt - in the Sierra Nevada.
 
 # This Repo
 
