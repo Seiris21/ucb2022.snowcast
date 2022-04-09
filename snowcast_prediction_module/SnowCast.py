@@ -643,12 +643,12 @@ def filter_nan_gaussian_conserving(arr, sigma):
 
 
 #Give it a conservative amount of smoothing
-sigma = 200
+sigma = 20
 blurred =filter_nan_gaussian_conserving(im_array, sigma)
 
 #And save this smoothed/blurred data
 ax = sns.heatmap(blurred, vmin = 0, vmax = 100, cmap = "mako_r", yticklabels=False, xticklabels=False)
-plt.savefig(f"{tif_path[0:-7]}{date}_smoothed_prediction.png")
+plt.savefig(f"{tif_path[0:-7]}_{date}_smoothed_prediction.png")
 np.savetxt(f"{tif_path[0:-7]}_{date}_smoothed_prediction.csv", blurred, delimiter=",")
 
 print('Your data is now in the snowcast_prediction/ReferenceImages directory')
