@@ -2,6 +2,11 @@
 
 ## Web Deliverable requirements
 Requirements from Week 1 PPT:  
+
+The final web deliverable is a chance to showcase your project,
+not just for peers and instructors but also for a broader
+audience. Think of it as a portfolio. 
+
 At minimum, the web deliverable should: 
 - describe the problem
 - model results
@@ -16,16 +21,19 @@ Estimation of snowfall in the Sierra Nevadas is critially important for the peop
 ### Our Solution
 Utilizing publicly available datasets, this project aimed to create a tool that would be able to provide accurate SWE estimates for basins in the Sierra Nevada. ASO was used as our SWE target for training.
 
-Datasets:
+### Datasets:
 - ASO
 
-Tutorial:
-<iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-\<insert tutorial>
+### Usage:
+Steps:
+- Manual steps, from video or something
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/CwJyJ6Lwvjg" title="Snowcast Tutorial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Model Results
-
 \<Insert images here>
+![Test Image](../main/reports/labeled.png|width=100)
 \<Insert results here>
 \<Insert tables, I dunno>
 
