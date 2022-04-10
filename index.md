@@ -19,7 +19,8 @@ Utilizing publicly available datasets, this project aimed to create a tool that 
 Datasets:
 - ASO
 
-\<insert video>
+Tutorial:
+<iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 \<insert tutorial>
 
 ### Model Results
