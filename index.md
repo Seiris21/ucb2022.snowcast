@@ -19,10 +19,14 @@ Interfaces that allow user interaction when appropriate are encouraged, for exam
 Estimation of snowfall in the Sierra Nevadas is critially important for the people of California and those who benefit from California agriculture. 75% of agricultural water supply across California are derived from precipitation and snow in the Sierra Nevadas. Current methods to estimate snow water equivalent (SWE) are either biased or expensive to conduct. Snow Telemetry (SNOTEL) sites are an automated network of snowpack and related climate sensors. Although there is constant data due to it's automated nature, the distribution of SNOTEL sites are biased towards lower elevations and do not accurately reflect all areas of interest. Airborne Snow Observatory (ASO) is a program to measure SWE through Light Detection and Ranging (lidar) and is the current gold standard for SWE estimations with it's ability to map entire regions through flyby missions. However ASO data collection is costly, and in recent years have gone private. Accurate estimates of snowfall would provide a valuable tool for natural resource managements, allowing for better usage recommendations and minimizing negative impacts for the agricultural region.
 
 ### Our Solution
-Utilizing publicly available datasets, this project aimed to create a tool that would be able to provide accurate SWE estimates for basins in the Sierra Nevada. ASO was used as our SWE target for training.
+Utilizing publicly available datasets, this project aimed to create a tool that would be able to provide accurate SWE estimates for basins in the Sierra Nevada. ASO was used as our SWE target for training. Public datasets were utilized as inputs for our model. We chose data sources that are going to be available for years to come (satillite imagery, weather data), in the hopes that the tool we created can be continued to be utilized in the future.
 
 ### Datasets:
-- ASO
+- Airborne Snow Observatory (link)
+- Sentinel (link)
+- MODIS (link)
+- Copernicus (link)
+- GRIDMET (link)
 
 ### Usage:
 Steps:
@@ -33,10 +37,21 @@ Steps:
 
 ### Model Results
 \<Insert images here>
-![Test Image](../main/reports/labeled.png|width=100)
+![Test Image](../main/reports/labeled.png)
 \<Insert results here>
-\<Insert tables, I dunno>
-
+#### Placeholder (Table from paper)
+| Basins (N-S) | Basin Size (km^2) | RMSE Observed | RMSE Predicted | Error |
+| --- | --- | --- | --- | --- |
+| Feather | - | - | - | - |
+| Yuba | - | - | - | - |
+| Truckee | - | - | - | - |
+| Carson | - | - | - | - |
+| Tuolumne | - | - | - | - |
+| Merced | - | - | - | - |
+| San Joaquin | - | - | - | - |
+| Kings Canyon | - | - | - | - |
+| Kaweah | - | - | - | - |
+| Overall | - | - | - | - |
 
 ### [Biography](biography.md)
 
