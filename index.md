@@ -22,7 +22,8 @@ Accurate estimates of snowfall would provide a valuable tool for natural resourc
 
 ### Our Solution
 Utilizing publicly available datasets, this project aimed to create a tool that would be able to provide accurate SWE estimates for basins in the Sierra Nevada. ASO was used as our SWE target for training. Public datasets were utilized as inputs for our model. We chose data sources that are going to be available for years to come (satillite imagery, weather data), in the hopes that the tool we created can be continued to be utilized in the future.
-![Test Image](../main/assets/pipeline.png)
+
+![Pipeline](../main/assets/pipeline.png)
 
 
 ### Datasets:
@@ -41,7 +42,9 @@ Steps:
 
 ### Model Results
 \<Insert images here>
+
 ![Test Image](../main/reports/labeled.png)
+
 \<Insert results here>
 #### Placeholder (Table from paper)
 
