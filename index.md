@@ -1,7 +1,7 @@
 # Predicting Snowpack in California’s Sierra Nevada Mountains
 
-[__Meet the Team__](about_us.md)
-[__Solution and Results__](solution_results.md)
+- [__Meet the Team__](about_us.md)
+- [__Solution and Results__](solution_results.md)
 
 ## Web Deliverable requirements
 Requirements from Week 1 PPT:  
