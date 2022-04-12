@@ -1,7 +1,3 @@
-layout: page
-title: "Our Solution and Results"
-permalink: /results/
-
 # Our Solution
 Utilizing publicly available datasets, this project aimed to create a tool that would be able to provide accurate estimates of the Snow Water Equivalent (SWE) for 9 large basins in the Sierra Nevada Mountains at a 1km resolution. 
 
