@@ -1,7 +1,3 @@
-layout: page
-title: "Our Solution and Results"
-permalink: /results/
-
 # Our Solution
 Utilizing publicly available datasets, this project aimed to create a tool that would be able to provide accurate estimates of the Snow Water Equivalent (SWE) for 9 large basins in the Sierra Nevada Mountains at a 1km resolution. 
 
@@ -9,7 +5,7 @@ By using public datasets as inputs for our model, we aim to replicate costly sur
 
 # Our Tool
 
-![Pipeline](https://raw.githubusercontent.com/Seiris21/ucb2022.snowcast/ac0228f8296cc378b41d5b2340cfbe41e4d0ffb5/docs/assets/pipeline.png)
+![Pipeline](https://raw.githubusercontent.com/Seiris21/ucb2022.snowcast/main/docs/assets/pipeline.png)
 
 ## Installation and Usage:
 Setting up and running the Snowcast tool is incredibly easy, with only 5 steps to making your first prediction
