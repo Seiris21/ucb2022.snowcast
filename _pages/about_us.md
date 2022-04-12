@@ -1,3 +1,5 @@
+---
 layout: page
-title: "About the Team"
-permalink: /about-us/
+title: About
+permalink: /about/
+---
