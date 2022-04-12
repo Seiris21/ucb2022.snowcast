@@ -20,15 +20,7 @@ avatar: /images/sierras.png
 
 # Includes an icon in the footer for each username you enter
 footer-links:
-  email: malachy.j.moran@berkeley.edu
-  github: Malachyiii
-  email: dhee@berkeley.edu
-  github: Seiris21
-  email: kaylaw@berkeley.edu
-  github: 
-  email: tbay@berkeley.edu
-  github: tbayer
-
+  github: Seiris21/ucb2022.snowcast
 
 # Enter your Disqus shortname (not your username) to enable commenting on posts
 # You can find your shortname on the Settings page of your Disqus account
