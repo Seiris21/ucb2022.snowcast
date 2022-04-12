@@ -75,10 +75,6 @@ sass:
   style: :expanded # You might prefer to minify using :compressed
 
 # Use the following plug-ins
-=======
-remote_theme: pages-themes/tactile@v0.2.0
-markdown: kramdown
->>>>>>> dcaa6061d7ada6e0adc9e650630c6eceaf3a442d
 plugins:
   - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
   - jekyll-feed # Create an Atom feed using the official Jekyll feed gem
