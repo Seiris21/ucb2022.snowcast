@@ -5,20 +5,6 @@ layout: default
 # Predicting Snowpack 
 ## in California’s Sierra Nevada Mountains
 
-## Web Deliverable requirements
-Requirements from Week 1 PPT:  
-
-The final web deliverable is a chance to showcase your project,
-not just for peers and instructors but also for a broader
-audience. Think of it as a portfolio. 
-
-At minimum, the web deliverable should: 
-- describe the problem
-- model results
-- evaluation
-- impact
-- include a biography or group intro page.   
-Interfaces that allow user interaction when appropriate are encouraged, for example, to explore different data sets or parameter choices.
 
 ### Problem
 
