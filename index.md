@@ -3,7 +3,7 @@ layout: default
 ---
 
 # Predicting Snowpack 
-##in California’s Sierra Nevada Mountains
+## in California’s Sierra Nevada Mountains
 
 ## Web Deliverable requirements
 Requirements from Week 1 PPT:  
@@ -23,7 +23,7 @@ Interfaces that allow user interaction when appropriate are encouraged, for exam
 ### Problem
 
 <p align="center">
-  <img width="1024" height="549" src="../images/sierras.png">
+  <img width="768" height="412" src="./images/sierras.png">
 </p>
 
 Estimation of snowfall in the Sierra Nevadas is critially important for the people of California and those who benefit from California agriculture. 75% of agricultural water supply across California are derived from precipitation and snow in the Sierra Nevadas.  
@@ -35,14 +35,14 @@ Accurate estimates of snowfall would provide a valuable tool for natural resourc
 ### The SnowCast Solution
 
 <p align="center">
-  <img width="1024" height="576" src="../images/sebastien-goldberg-PnWX202t_yg-unsplash.jpg">
+  <img width="768" height="432" src="./images/sebastien-goldberg-PnWX202t_yg-unsplash.jpg">
 </p>
 <center>Photo by <a href="https://unsplash.com/@sebastiengoldberg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Sébastien Goldberg</a> on <a href="https://unsplash.com/s/photos/sierra-nevada?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></center>
 
 We’ve created a prediction tool that uses free and available data sources to estimate snow water equivalent (SWE) in the Sierra Nevadas achieving a Root Mean Squared Error of 8” when compared to ASO measurements. Being able to accurately predict/estimate the SWE in the Sierra Nevadas is critical for water management, policy makers, and researchers. This need becomes more and more critical as the water crisis of the West Coast continues to grow. The ability to replace and/or supplement expensive and infrequent ASO flights is incredibly valuable to a wide range of individuals.
 
 <p align="center">
-  <img width="648" height="432" src="../images/SanJoaquin_2022-03-18 00:00:00_smoothed_prediction.png">
+  <img width="648" height="432" src="./images/SanJoaquin_2022-03-18 00:00:00_smoothed_prediction.png">
 </p>
 
 <div class="posts">
