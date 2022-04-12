@@ -133,5 +133,6 @@ notebooks/models/wandb
 # leave out logs too
 notebooks/models/lightning_logs
 
-#Leaving out model weights because they are too big
+#Leaving out model weights and csvs because they are too big
+snowcast_prediction_module/ReferenceImages/*.csv
 *.ckpt
