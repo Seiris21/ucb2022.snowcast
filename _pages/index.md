@@ -26,8 +26,6 @@ Accurate estimates of snowfall would provide a valuable tool for natural resourc
 
 
 
-### [Biography](biography.md)
-
 <div class="posts">
   {% for post in paginator.posts %}
     <article class="post">
