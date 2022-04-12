@@ -12,7 +12,7 @@ By using public datasets as inputs for our model, we aim to replicate costly sur
 # Our Tool
 
 <p align="center">
-  <img width="891" height="655" src="../images/screenshot.png">
+  <img width="475" height="325" src="../images/screenshot.png">
 </p>
 <center><p style="color:black;font-size:10px;">Screenshot of the Snowcast Tool</p></center>
 
@@ -57,14 +57,14 @@ The Snowcast prediction tool utilizes three different types of datasets.
 All of these datasets can be accessed below, and are available on Google Earth Engine or Microsoft Planetary Computer
 
 ### Target Variable
-<center>[Airborne Snow Observatory](https://nsidc.org/data/aso)</center>
+<center><a href="https://nsidc.org/data/aso">Airborne Snow Observatory</a></center>
 
 ### Satellite Imagery and Weather Assets
-<center>[Sentinel-1 SAR GRD](https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S1_GRD)</center>
-<center>[Sentinel-2 MSI](https://developers.google.com/earth-engine/datasets/catalog/sentinel-2)</center>
-<center>[MODIS Terra and Aqua Snowcover Data](https://developers.google.com/earth-engine/datasets/catalog/modis)</center>
-<center>[Copernicus 30m Digital Elevation Model](https://planetarycomputer.microsoft.com/dataset/cop-dem-glo-30)</center>
-<center>[GRIDMET Meteorogical Dataset](https://developers.google.com/earth-engine/datasets/catalog/IDAHO_EPSCOR_GRIDMET)</center>
+<center><a href="https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S1_GRD">Sentinel-1 SAR GRD</a></center>
+<center><a href="https://developers.google.com/earth-engine/datasets/catalog/sentinel-2">Sentinel-2 MSI</a></center>
+<center><a href="https://developers.google.com/earth-engine/datasets/catalog/modis">MODIS Terra and Aqua Snowcover Data</a></center>
+<center><a href="https://planetarycomputer.microsoft.com/dataset/cop-dem-glo-30">Copernicus 30m Digital Elevation Model</a></center>
+<center><a href="https://developers.google.com/earth-engine/datasets/catalog/IDAHO_EPSCOR_GRIDMET">GRIDMET Meteorological Dataset</a></center>
 
 
 
