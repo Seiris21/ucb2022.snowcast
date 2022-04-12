@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Home
-permalink: 
+permalink: /home/
 ---
 
 # Predicting Snowpack in California’s Sierra Nevada Mountains
