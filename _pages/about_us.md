@@ -21,7 +21,7 @@ permalink: /team/
 </p>
 <center>Kayla Wopschall</center>
 <center>Ph.D., Data &  Applied Scientist</center>
-<center><a href = "mailto: kaylaw@berkeley.edu">kaylaw.edu</a></center>
+<center><a href = "mailto: kaylaw@berkeley.edu">kaylaw@berkeley.edu</a></center>
 
 
 

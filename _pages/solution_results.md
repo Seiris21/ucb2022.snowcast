@@ -52,7 +52,8 @@ All of these datasets can be accessed below, and are available on Google Earth E
 
 # Model Results and Accuracy Measures
 
-![Smoothed Prediction of Yuba Basin from March 25th, 2022](https://raw.githubusercontent.com/Seiris21/ucb2022.snowcast/main/snowcast_prediction_module/ReferenceImages/Tests/Yuba_2022-03-25 00:00:00_smoothed_prediction.png)
+![Smoothed Prediction of Yuba Basin for March 25th, 2022](https://raw.githubusercontent.com/Seiris21/ucb2022.snowcast/main/snowcast_prediction_module/ReferenceImages/Tests/Yuba_2022-03-25 00:00:00_smoothed_prediction.png)
+
 
 ### Table of Results by Basin
 
