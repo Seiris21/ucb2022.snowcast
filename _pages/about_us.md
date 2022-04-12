@@ -26,6 +26,7 @@ This project was built by a team of four Masters of Information Data Science (MI
 <center>Kayla Wopschall</center>
 <center>Ph.D., Data &  Applied Scientist</center>
 <center><a href = "mailto: kaylaw@berkeley.edu">kaylaw@berkeley.edu</a></center>
+<center><a href="github.com/kwopschall">github.com/kwopschall</a></center>
 
 
 
