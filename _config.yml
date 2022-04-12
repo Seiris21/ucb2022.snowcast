@@ -3,6 +3,6 @@ markdown: kramdown
 plugins:
 - jekyll-remote-theme
 
-title: ['Predicting Snowpack in California’s Sierra Nevada Mountains']
-description: [What the dog doin']
+title: [Predicting Snowpack in California’s Sierra Nevada Mountains]
+description: [UCB 2022 Spring Capstone Project]
 logo: https://raw.githubusercontent.com/Seiris21/ucb2022.snowcast/main/docs/assets/labeled.png
