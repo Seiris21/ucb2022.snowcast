@@ -17,7 +17,7 @@ permalink: /team/
 
 
 <p align="center">
-  <img width="224" height="224" src="../images/kayla.jpeg">
+  <img width="224" height="224" src="../images/kayla.jpg">
 </p>
 <center>Kayla Wopschall</center>
 <center>Ph.D., Data &  Applied Scientist</center>
