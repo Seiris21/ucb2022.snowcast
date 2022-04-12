@@ -4,4 +4,4 @@ title: About the Team
 permalink: /team/
 ---
 
-Yoyoyoyoyo
+Yoyoyoyoyoo

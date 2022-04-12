@@ -6,7 +6,6 @@ permalink:
 
 # Predicting Snowpack in California’s Sierra Nevada Mountains
 
-
 ## Web Deliverable requirements
 Requirements from Week 1 PPT:  
 
