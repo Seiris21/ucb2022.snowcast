@@ -11,7 +11,25 @@ By using public datasets as inputs for our model, we aim to replicate costly sur
 
 # Our Tool
 
+<p align="center">
+  <img width="891" height="655" src="../images/screenshot.png">
+</p>
+<center><p style="color:black;font-size:10px;">Screenshot of the Snowcast Tool</p></center>
+
+Our tool is deployed as a command line interface program. Simple to install, and intuitive to use, the SnowCast tool abstracts away all of the underlying processes. All the user needs to do is select an area and date to predict, then wait!
+
+## Under the Hood
+
 ![Pipeline](https://raw.githubusercontent.com/Seiris21/ucb2022.snowcast/main/docs/assets/pipeline.png)
+
+The Snowcast tool follows a very simple process to make predictions.
+
+- Firstly, the tool asks for user input on the basin of interest, and the date.
+- After receiving this information, the tool will chop the basin of interest up into 1km x 1km squares
+- One square at a time, the tool will collect the relevant data, holding it in the temporary memory, and use that data to make predictions
+- Once all squares are complete, they are stitched back together into a reference image and a .csv file of the data.
+
+To see the code and development process, see the [git repo](https://github.com/Seiris21/ucb2022.snowcast). Many of the functions used in the code are available for use or modification in the bespoke [python package](https://github.com/Malachyiii/snowcast_package) that supports the tool.
 
 ## Installation and Usage:
 Setting up and running the Snowcast tool is incredibly easy, with only 5 steps to making your first prediction
@@ -25,9 +43,9 @@ Steps:
 
 That's all there is to it! Watch the short installation guide and demo below to see a demonstration.
 
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/CwJyJ6Lwvjg" title="Snowcast Tutorial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
+<p align="center">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/CwJyJ6Lwvjg" title="Snowcast Tutorial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
 
 ## Tool Datasets:
 The Snowcast prediction tool utilizes three different types of datasets.
@@ -39,14 +57,14 @@ The Snowcast prediction tool utilizes three different types of datasets.
 All of these datasets can be accessed below, and are available on Google Earth Engine or Microsoft Planetary Computer
 
 ### Target Variable
-- [Airborne Snow Observatory](https://nsidc.org/data/aso)
+<center>[Airborne Snow Observatory](https://nsidc.org/data/aso)</center>
 
 ### Satellite Imagery and Weather Assets
-- [Sentinel-1 SAR GRD](https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S1_GRD)
-- [Sentinel-2 MSI](https://developers.google.com/earth-engine/datasets/catalog/sentinel-2)
-- [MODIS Terra and Aqua Snowcover Data](https://developers.google.com/earth-engine/datasets/catalog/modis)
-- [Copernicus 30m Digital Elevation Model](link)
-- [GRIDMET Meteorogical Dataset](https://developers.google.com/earth-engine/datasets/catalog/IDAHO_EPSCOR_GRIDMET)
+<center>[Sentinel-1 SAR GRD](https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S1_GRD)</center>
+<center>[Sentinel-2 MSI](https://developers.google.com/earth-engine/datasets/catalog/sentinel-2)</center>
+<center>[MODIS Terra and Aqua Snowcover Data](https://developers.google.com/earth-engine/datasets/catalog/modis)</center>
+<center>[Copernicus 30m Digital Elevation Model](https://planetarycomputer.microsoft.com/dataset/cop-dem-glo-30)</center>
+<center>[GRIDMET Meteorogical Dataset](https://developers.google.com/earth-engine/datasets/catalog/IDAHO_EPSCOR_GRIDMET)</center>
 
 
 
@@ -54,6 +72,11 @@ All of these datasets can be accessed below, and are available on Google Earth E
 
 ![Smoothed Prediction of Yuba Basin for March 25th, 2022](https://raw.githubusercontent.com/Seiris21/ucb2022.snowcast/main/snowcast_prediction_module/ReferenceImages/Tests/Yuba_2022-03-25 00:00:00_smoothed_prediction.png)
 
+Our model was able to achieve a weighted average Root Mean Squared Error of 8" compared to the most recent ASO flyover. The accuracy varied by the basin as can be seen in the table below. 
+
+Since our model predicts at a coaser 1km x 1km resolution than the orginial ASO data, Gaussian Smoothing was applied to the predictions. This allows each pixel of the image to be influenced by the value of the pixels around it. With Gaussia Smoothing we were able to achieve a Root Mean Squared Error of 7.5".
+
+For specific details about model accuracy, errors, and upcoming improvements, please see the [supporting paper](https://docs.google.com/document/d/1b_gI8lQ0ZhayQcq4T0wT4w9wVk4rD281uSmRsbcSRRc/edit?usp=sharing).
 
 ### Table of Results by Basin
 
@@ -67,5 +90,5 @@ All of these datasets can be accessed below, and are available on Google Earth E
 | Merced | 1711 | 6.888" | 5.751" |
 | San Joaquin | 4242 | 8.837" | 7.637" |
 | Kings Canyon | 3464 | 18.411" | 17.485" |
-| Kaweah | 1451" | 5.300" | 5.120" |
-| Overall | 28756 | 8.000" | 7.452" |
+| Kaweah | 1451 | 5.300" | 5.120" |
+| **Overall** | **28756** | **8.000"** | **7.452"** |

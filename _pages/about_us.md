@@ -4,6 +4,10 @@ title: About the Team
 permalink: /team/
 ---
 
+# Meet the Team
+
+This project was built by a team of four Masters of Information Data Science (MIDS) students from the University of California Bereley for their capstone project. If you have any questions about the project or just want to reach out, please feel free to contact any of us at the contact info below
+
 <p align="center">
   <img width="224" height="224" src="../images/mal.png">
 </p>
