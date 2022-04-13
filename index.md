@@ -15,7 +15,7 @@ layout: default
 
 <div align="justify">Estimation of snowfall in the Sierra Nevadas is critially important for the people of California and those who benefit from California agriculture. 75% of agricultural water supply across California are derived from precipitation and snow in the Sierra Nevadas.
 
-Current methods to estimate snow water equivalent (SWE) are lack representative geographic coverage or are expensive to conduct. For example, Snow Telemetry (SNOTEL) sites are an automated network of snowpack and related climate sensors. Although there is constant data due to it's automated nature, the distribution of SNOTEL sites are biased towards lower elevations and do not accurately reflect all areas of interest. Alternatively, the Airborne Snow Observatory (ASO) is a program to measure SWE through Light Detection and Ranging (lidar) and is the current gold standard for SWE estimations with it's ability to map entire regions through flyby missions. However ASO data collection is costly, sporadic, and in recent years has gone private.</div>
+Current methods to estimate snow water equivalent (SWE) lack representative geographic coverage or are expensive to conduct. For example, Snow Telemetry (SNOTEL) sites are an automated network of snowpack and related climate sensors. Although they provide constant data due to their automated nature, the distribution of SNOTEL sites are biased towards lower elevations and do not accurately reflect all areas of interest. Alternatively, the Airborne Snow Observatory (ASO) is a program to measure SWE through Light Detection and Ranging (LiDAR) and is the current gold standard for SWE estimations with its ability to map entire regions through flyby missions. However ASO data collection is costly, sporadic, and in recent years has gone private.</div>
 
 ### The Impact
 
@@ -37,7 +37,7 @@ By creating a machine learning solution for generating these estimations from pu
 
 <center><a href="https://seiris21.github.io/ucb2022.snowcast/results/">Solution and Results</a></center>
 
-<div align="justify">We’ve created a prediction tool that uses free and available data sources to estimate snow water equivalent (SWE) in the Sierra Nevadas achieving a Root Mean Squared Error of 8” when compared to ASO measurements. Being able to accurately predict/estimate the SWE in the Sierra Nevadas is critical for water management, policy makers, and researchers. This need becomes more and more critical as the water crisis of the West Coast continues to grow. The ability to replace and/or supplement expensive and infrequent ASO flights is incredibly valuable to a wide range of individuals.</div>
+<div align="justify">We’ve created a prediction tool that uses freely available data sources to estimate snow water equivalent (SWE) in the Sierra Nevadas, achieving a Root Mean Squared Error of 8” when compared to ASO measurements. Being able to accurately predict/estimate the SWE in the Sierra Nevadas is critical for water management, policy makers, and researchers. This need becomes more and more critical as the water crisis of the West Coast continues to grow. The ability to replace and/or supplement expensive and infrequent ASO flights is incredibly valuable to a wide range of individuals.</div>
 
 <p align="center">
   <img width="648" height="432" src="./images/SanJoaquin_2022-03-18 00:00:00_smoothed_prediction.png">
