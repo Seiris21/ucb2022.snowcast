@@ -1,5 +1,5 @@
 # SnowCast - Berkeley MIDS 2022 Capstone Project
-**Authors: Malachy Moran, Derrick Hee, Kayla Wopschall, Tilman Bayer**
+**Authors: Malachy Moran, Derrick Hee, Kayla Woputz, Tilman Bayer**
 
 ![Snowpack Prediction](https://github.com/Seiris21/2022_snowpack_capstone/blob/main/snowcast_prediction_module/ReferenceImages/Tests/README.png?raw=true)
 
